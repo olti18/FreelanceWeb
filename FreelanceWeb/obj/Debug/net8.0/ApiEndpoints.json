@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "FreelanceWeb.Controllers.ProjectPostsController",
-    "Method": "GetProjectPosts",
+    "Method": "GetUserId",
     "RelativePath": "api/ProjectPosts",
     "HttpMethod": "GET",
     "IsController": true,

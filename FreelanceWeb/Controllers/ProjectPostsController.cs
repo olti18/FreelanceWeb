@@ -47,7 +47,21 @@ namespace FreelanceWeb.Controllers
             this.userManager = userManager;
             this.mapper = mapper;
         }
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetUserId()
+        {
+            // Get the user from UserManager
+            var user = await userManager.GetUserAsync(User);
 
+            if (user == null)
+            {
+                return Unauthorized("User not found.");
+            }
+            var id = user.Id;
+            // Return the User ID
+            return Ok(new { UserId = user.Id });
+        }
 
         /*[HttpGet]
         [Authorize(Roles = "Admin")]
@@ -64,8 +78,32 @@ namespace FreelanceWeb.Controllers
             return Ok("Success");
         }*/
 
+        /*[HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetUserId()
+        {
+            // Get the user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
 
-        [HttpGet]
+            if (string.IsNullOrEmpty(userIdClaim))
+            {
+                return Unauthorized("User ID claim not found.");
+            }
+
+            return Ok(new { UserId = userIdClaim });
+        }*/
+        /*[HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetUserClaims()
+        {
+            var claims = User.Claims.Select(c => new { c.Type, c.Value }).ToList();
+            return Ok(claims);
+        }*/
+
+
+
+
+        /*[HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetProjectPosts()
         {
@@ -84,10 +122,10 @@ namespace FreelanceWeb.Controllers
             }
 
             return Ok($"Email claim found: {emailClaim}");
-        }
+        }*/
     }
 
-   
+
 
 
     /*[HttpPost]

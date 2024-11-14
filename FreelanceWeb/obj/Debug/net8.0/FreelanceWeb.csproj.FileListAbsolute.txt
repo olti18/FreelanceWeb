@@ -174,3 +174,4 @@ C:\Users\NB\source\repos\FreelanceWeb\FreelanceWeb\obj\Debug\net8.0\refint\Freel
 C:\Users\NB\source\repos\FreelanceWeb\FreelanceWeb\obj\Debug\net8.0\FreelanceWeb.pdb
 C:\Users\NB\source\repos\FreelanceWeb\FreelanceWeb\obj\Debug\net8.0\FreelanceWeb.genruntimeconfig.cache
 C:\Users\NB\source\repos\FreelanceWeb\FreelanceWeb\obj\Debug\net8.0\ref\FreelanceWeb.dll
+C:\Users\NB\source\repos\FreelanceWeb\FreelanceWeb\obj\Debug\net8.0\FreelanceWeb.sourcelink.json
